@@ -39,10 +39,8 @@ Make sure to replace 'your-api-key' and 'your-api-secret' with your actual API k
        key: 'your-api-key',
        secret: 'your-api-secret'
    };
-
- ```
-
-    ```typescript 
+```
+   ```typescript 
     // src/environments/environment.ts
 
    export const environment = {
