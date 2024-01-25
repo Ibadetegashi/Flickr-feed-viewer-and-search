@@ -1,0 +1,34 @@
+<div class="container-fluid p-0">
+    <div class="form-group m-0">
+        <input style="height: auto;" type="search" class="form-control" [(ngModel)]="tag" (input)="onTagInput()"
+            placeholder="Search images">
+    </div>
+    
+    <main *ngIf="showMainSection" class="d-flex flex-column justify-content-between p-4 container-fluid">
+        <h1 class="text-white">Unleash Your Creativity.</h1>
+        <h3 class="text-white">Discover a world of endless inspiration on Flickr, where creativity knows no bounds.</h3>
+        <a href="/" class="btn btn-light">Start by typing 3+ chars</a>
+    </main>
+    
+    <div *ngIf="!showMainSection" class="container" >
+        <br>
+    <div class="justified-gallery">
+        <a *ngFor="let image of photosWithDimensions" href="#"  class="gallery-item" [routerLink]="['/details', image?.id]">
+            <img [src]="image.url"  alt="Image" class="img-thumbnail" >
+            <div class="footer">
+                <span> <b>{{image?.title._content}}</b></span><br />
+                <span>By: {{image?.owner.username}}</span><br />
+                <span>{{image?.tags.tag[0].raw}}</span>
+            </div>
+        </a>
+        <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+            (scrolled)="onScroll()">
+        </div>
+    </div>
+    </div>
+
+    <div *ngIf="isLoading"  class="loading-spinner text-white">
+        <b>Loading...</b>
+    </div>
+    
+</div>

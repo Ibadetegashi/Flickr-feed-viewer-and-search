@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row" style="height: 100vh;">
+        <div class="col-md-9 img-col">
+            <div class="image-container align-items-center" *ngIf="photo.url">
+                <img [src]="photo.url" alt="Image" class="img-fluid">
+            </div>
+        </div>
+
+        <div class="col-md-3 d-flex flex-column" style="color: #ff006e;background-color: #4fa6ee17;">
+            <div class="details">
+                <button class="back-button" (click)="goBack()"></button>
+                <br>
+                <h1>Details</h1>
+                <br>
+                <em *ngIf="photo.owner.realname || photo.owner.username"><b>Author:</b></em>
+                <span>
+                    {{ photo.owner.realname || photo.owner.username }}
+                </span>
+                <hr>
+                <em><b>Tags:</b></em>
+                <span *ngFor="let tag of photo.tags.tag" class="tag">
+                    {{ (tag._content.length > 10) ? (tag._content | slice:0:6)+'...' : (tag._content) }}
+                </span>
+                <hr>
+                <em><b>Taken:</b></em>
+                <span>
+                    {{photo.dates.taken}}
+                </span>
+                <hr>
+                <em><b>Views:</b></em>
+                <span>
+                    {{photo.views}}
+                </span>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</div>

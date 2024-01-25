@@ -1,0 +1,56 @@
+
+.image-container {
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.image-container img {
+    width: 100%;
+    height:90svh;
+    height: 90vh;
+    border-radius: 8px;
+    object-fit: contain;
+}
+.img-col {
+    background-color: black;
+    display: grid;
+    place-content: center;
+   
+}
+
+span{
+    color: #a08686;
+}
+
+.tag {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: #e0e0e0;
+    padding: 3px 8px;
+    border-radius: 15px;
+    color: #ff006e;
+    font-size: 0.9em;
+}
+
+.back-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 5px;
+    position: fixed;
+    top: 0px;
+    left: 16px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-button:before {
+    content: "\2190";
+    font-size: 40px;
+    font-weight: bold;
+    color: #ff006e;
+}

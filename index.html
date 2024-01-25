@@ -1,0 +1,37 @@
+<div class="jg">
+
+    <a href="#" style="--w: 200; --h: 300">
+        <img src="http://via.placeholder.com/200x300">
+    </a>
+
+</div>
+
+<style>
+    .jg {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.jg > a, .jg::after {
+  --ratio: calc(var(--w) / var(--h));
+  --row-height: 9rem;
+  flex-basis: calc(var(--ratio) * var(--row-height));
+}
+
+.jg > a {
+  margin: 0.25rem;
+  flex-grow: calc(var(--ratio) * 100);
+}
+
+.jg::after {
+  --w: 2;
+  --h: 1;
+  content: '';
+  flex-grow: 1000000;
+}
+
+.jg > a > img {
+  display: block;
+  width: 100%;  
+}
+</style>
