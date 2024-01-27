@@ -3,7 +3,7 @@
 
 ## Overview
 
-This web application is a simple tool that allows users to search Flickr's public feeds and view images along with additional details. It leverages Flickr's JSONP API to provide real-time/instant results as the user types, displaying images as thumbnails along with the author, tags, and a link to the high-resolution image for a more immersive viewing experience.
+This web application is a simple tool that allows users to search Flickr's public feeds and view images along with additional details. It leverages Flickr's JSON API to provide real-time/instant results as the user types, displaying images along with the author, tags, and a link to the high-resolution image for a more immersive viewing experience.
 
 ## Features
 
